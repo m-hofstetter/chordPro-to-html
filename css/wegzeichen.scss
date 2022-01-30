@@ -1,0 +1,53 @@
+$wegzeichen_size: 10pt;
+
+//.song::before {
+//  content: "";
+//  position: absolute;
+//  background: {
+//    image: url("../images/wegzeichen_beginn.svg");
+//    repeat: no-repeat;
+//    size: 100%;
+//    position-y: center;
+//  };
+//  width: 2 * $wegzeichen_size;
+//  height: $wegzeichen_size;
+//  transform: translate(-2 * $wegzeichen_size - 2mm, $wegzeichen_size);
+//  calc(#{-0.5 * $wegzeichen_size} + 1em)
+//}
+
+//.song-container::after {
+//  content: "";
+//  background: {
+//    image: url("../images/wegzeichen_ende.svg");
+//    repeat: no-repeat;
+//    size: 100%;
+//  };
+//  padding: {
+//    left: $wegzeichen_size;
+//    bottom: 2 * $wegzeichen_size;
+//  };
+//  float: right;
+//}
+
+@page {
+  @top-left {
+    content: "";
+    background: {
+      image: url("../images/wegzeichen_beginn.svg");
+      repeat: no-repeat;
+      size: 2 * $wegzeichen_size $wegzeichen_size;
+      position-y: calc(100% - 1mm);
+    };
+  }
+
+  @bottom-right {
+    content: "";
+    background: {
+      image: url("../images/wegzeichen_ende.svg");
+      repeat: no-repeat;
+      size: $wegzeichen_size 2 * $wegzeichen_size;
+      position-y: 1mm;
+      position-x: 100%;
+    };
+  }
+}

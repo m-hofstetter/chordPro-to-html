@@ -1,0 +1,140 @@
+@import "fonts.css";
+@import "wegzeichen.css";
+
+body {
+  --dpsg-rot: #810a1a;
+  --dpsg-blau: #003056;
+  --dpsg-dunkelbeige: #b2a795;
+  font-family: Calibri;
+}
+
+.line {
+  display: flex;
+  page-break-inside: avoid;
+}
+
+.chord {
+  font-family: TheSerif;
+  color: var(--dpsg-dunkelbeige);
+  margin-bottom: -0.6em;
+  font-size: 0.9em;
+}
+
+.lyrics {
+
+}
+
+.song {
+  margin-top: 1em;
+  column-count: 2;
+}
+
+.unused {
+  display: none;
+}
+
+.chorus {
+  border-left: solid var(--dpsg-dunkelbeige) 1pt;
+  padding-left: 3mm;
+  break-inside: avoid-column;
+}
+
+.chorus::before {
+  content: "Chorus";
+  font-family: TheSerif;
+  color: var(--dpsg-dunkelbeige);
+}
+
+.bottom_margin {
+  margin-bottom: 1em;
+}
+
+h2 {
+  color: var(--dpsg-rot);
+  font: bold 3em TheSerif, serif;
+  margin: 0;
+  margin-top: -0.3em;
+}
+
+.meta-information {
+  margin-top: 1em;
+  display: flex;
+}
+
+.capo {
+  text-align: right;
+  flex-grow: 1;
+
+  &::before {
+    content: "Kapo im ";
+  }
+
+  &::after {
+    content: ". Bund";
+  }
+}
+
+.lyricist {
+  &::before {
+    content: "Worte: ";
+  }
+}
+
+.composer {
+  &::before {
+    content: "Weise: ";
+  }
+}
+
+@page {
+  size: 210mm 297mm;
+  margin: {
+    top: 18mm;
+    right: 15mm;
+    bottom: 18mm;
+    left: 15mm;
+  }
+
+}
+
+
+@page :left {
+  margin-right: 15mm;
+  @bottom-left {
+    content: "Lied " counter(page);
+    color: var(--dpsg-dunkelbeige);
+    vertical-align: bottom;
+  }
+}
+
+@page :right {
+  margin-left: 15mm;
+  @top-right {
+    content: "Lied " counter(page);
+    color: var(--dpsg-dunkelbeige);
+    vertical-align: bottom;
+  }
+}
+
+@media print {
+  body {
+    font-size: 11pt;
+  }
+}
+
+.pagedjs_page_content {
+  border-bottom: solid var(--dpsg-dunkelbeige) 1px;
+  border-top: solid var(--dpsg-dunkelbeige) 1px;
+}
+
+@media screen {
+  .pagedjs_pagebox {
+    border: solid darkgrey 1px;
+  }
+  .pagedjs_page {
+    margin: 3px;
+  }
+  .pagedjs_pages {
+    display: flex;
+  }
+}

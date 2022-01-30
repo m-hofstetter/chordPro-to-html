@@ -1,0 +1,19 @@
+@page {
+  @top-left {
+    content: "";
+    background-image: url("../images/wegzeichen_beginn.svg");
+    background-repeat: no-repeat;
+    background-size: 20pt 10pt;
+    background-position-y: calc(100% - 1mm);
+  }
+  @bottom-right {
+    content: "";
+    background-image: url("../images/wegzeichen_ende.svg");
+    background-repeat: no-repeat;
+    background-size: 10pt 20pt;
+    background-position-y: 1mm;
+    background-position-x: 100%;
+  }
+}
+
+/*# sourceMappingURL=wegzeichen.css.map */

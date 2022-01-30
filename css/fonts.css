@@ -1,0 +1,11 @@
+@font-face {
+    font-family: TheSerif;
+    font-weight: bold;
+    src: url("../fonts/TheSerif Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: TheSerif;
+    font-weight: normal;
+    src: url("../fonts/TheSerif Plain.otf") format("opentype");
+}
